@@ -1,0 +1,27 @@
+{
+  "browserify": {
+    "dist/browserified.js":"../browserify.js"
+  },
+  "compass": {
+    "sassDir": "../css/compass",
+    "fontsDir": "../css/fonts",
+    "require": ["bootstrap-sass", "compass/import-once/activate"]
+  },
+  "copy": {
+    "../css/frameworks/limitless" : "frameworks/limitless"
+  },
+  "additionaltargets": {
+    "css": [
+      ["dist", "style.css"]
+    ]
+  },
+  "exclude": {
+    "jshint": [
+      "browserified.js"
+    ]
+  },
+  "protoboard": {
+    "role":"web_component",
+    "js_doc_filters": "^(src)"
+  }
+}

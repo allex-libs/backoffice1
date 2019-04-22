@@ -1,0 +1,1154 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+@import "compass/css3";
+
+
+//$fa-font-path:"../components/components-font-awesome/fonts";
+$limitless_icons_path:"../dist/frameworks/limitless/assets/css/icons/";
+//$angular-ui-grid-font-path:"../../../components/allexjs-angular-ui-grid/dist/release/";
+//@import "ui-grid"; //seems that this is not needed
+@import "../frameworks/limitless/assets/css/icons/icomoon/styles";
+@import "../frameworks/limitless/assets/css/core";
+@import "../frameworks/limitless/assets/css/components";
+@import "../frameworks/limitless/assets/css/colors";
+@import "../frameworks/limitless/assets/css/extras/animate";
+@import "../frameworks/limitless/assets/css/repair";
+//@import "../../../assets/js/radoya/bootstrap3-editable/css/bootstrap-editable";
+@import "../components/components-font-awesome/scss/font-awesome";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900');
+
+//customize default backoffice colors
+$color:#9C27B0 !default;
+$color-800:#6A1B9A !default;
+$color-700:#7B1FA2 !default;
+$color-600:#8E24AA !default;
+$color-500:#9C27B0 !default;
+$color-400:#AB47BC !default;
+$color-300:#BA68C8 !default;
+
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin fullbgimg() {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "extrasmall" {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "small" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "extralarge" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "desktop" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "smalldesktop" {
+    @media (min-width:992px) and (max-width: 1200px) {
+      @content;
+    }
+  }      
+}
+
+@mixin centered () {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;	
+}
+
+@mixin vcentered () {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;	
+}
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+.nopad {
+  padding-left:0;
+  padding-right:0;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+
+
+.colorablerows .ui-grid-row:nth-child(odd) .ui-grid-cell,
+.colorablerows .ui-grid-row:nth-child(even) .ui-grid-cell,
+{
+  background-color:inherit;
+}
+
+span.block-modal {
+    position: fixed;
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.71);
+    top: 0;
+    left: 0;
+}
+
+span.block-modal div.centered {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 50%;
+    margin-top: -35px;
+    text-align: center;
+    color: #08c4ff;
+    font-size: 20px;
+}
+
+span.block-modal div.centered i {
+    color: #08c4ff;
+}
+.ui-grid-filter-container .bootstrap-datetimepicker-widget {
+  position : relative;
+  z-index :1;
+}
+
+
+
+$barColor: tomato;
+$overlayColor: #fffde8;
+$backColor: #2f3439;
+#slot {
+  td.icons {
+//    min-width:100px;
+    .file-preview-frame {
+      height:auto;
+      img {
+        min-height:auto;
+        max-width:65px;
+        max-height:50px;
+      }
+    }
+    button.fileinput-remove-button {
+      display:none;
+    }
+    div.btn-file {
+      display:none;
+    }
+    .file-input-new {
+      div.btn-file {
+        display:inline-block;
+      }
+    }
+    div.file-preview {
+      margin-bottom:0;
+    }
+    div.form-group {
+      margin-bottom:0;
+    }
+  }
+}
+.navbar-brand>img {
+  height:35px;
+}
+.navbar-brand {
+  padding:4px 20px;
+}
+div.page-container {
+  position:absolute;
+  height:calc(100% - 203px);
+}
+div.page-container.login-container {
+  position:absolute;
+  height:calc(100% - 68px);
+  padding-bottom:22px;
+}
+div.footer {
+    background-color: #f5f5f5;
+    bottom: 0;
+    height: 22px;
+    position: fixed;
+    width: 100%;
+    text-align:center;  
+}
+div.test-butons {
+  padding:10px 0;
+}
+div.progress {
+  padding-left:0;
+  padding-right:0;
+}
+span.retval {
+  font-size:35px;
+  letter-spacing:-2px;
+}
+div.progress-container {
+  padding:15px 0;
+  min-height:145px;
+  .progressbar-front-text {
+    width:100% !important;
+  }
+}
+.hdn, .hjdn {
+  display:none;
+}
+.anadata {
+  padding:5px 0 10px;
+}
+.bootbox-confirm {
+  .bootbox-body {
+    font-size:15px;
+  }
+}
+.report-header {
+  padding:20px;
+  border-top:1px solid #dddddd;
+  border-bottom-width:0;
+
+}
+div.SlotTableHolder {
+  visibility:hidden;
+}
+#resource {
+  display:none;
+}
+ul.nav.navbar-nav.navbar-right {
+  position:relative;
+  z-index:1;
+}
+#slot { 
+  > div.table_container {
+    height:auto !important;
+    div.ui-grid-top-panel {
+      background:white !important;
+      .ui-grid-cell-contents {
+        padding:20px 5px;
+      }
+    }
+    div.ui-grid-viewport {
+      width:100% !important;
+    }   
+    div.ui-grid-canvas {
+      div.ui-grid-row {
+        > div {
+          div.ui-grid-cell {
+            padding-top:17px;
+          }
+          div.ui-grid-cell:first-child {
+            padding:10px;
+          }
+        }
+      }
+    }
+  }
+}
+div.row.proghold {
+  text-align:center;
+}
+.progresss {
+  width:86px;
+  display:inline-block;
+  height:86px;
+    position: relative;
+    top: -16px;   
+  span.fi {
+      position: absolute;
+      width: 110px;
+      margin-left: -55px;
+      font-size: 26px;
+      font-weight: 100;
+      letter-spacing: -3px;
+      margin-top: 33px; 
+  }
+  span.fikus {
+      position: absolute;
+      margin-top: 48px;
+      width: 44px;
+      margin-left: -22px;   
+  }
+}
+div.windistributionbars {
+  margin-top:-36px;
+}
+#slot .ui-grid-render-container-body .ui-grid-viewport {
+  height:auto !important;
+}
+/*
+#progresss {
+  width:65px;
+  display:inline-block;
+  span.fi {
+      position: absolute;
+      width: 50px;
+      margin-left: -25px;
+      font-size: 26px;
+      font-weight: 100;
+      letter-spacing: -3px;
+      margin-top: 11px;   
+  }
+}
+*/
+
+#SlotResourceContent {
+  a.upload_image_existing > img {
+    display: inline-block;
+    height : 50px;
+  }
+}
+.navbar-inverse {
+  background-color:#308b90;
+  div.navbar-collapse {
+    &:before {
+      content:'CHECK SYSTEM v0.0.2';
+      font-size: 15px;
+      position: absolute;
+      margin-left: 170px;
+      padding-top: 18px;      
+      }
+    }
+  }
+input {
+  &.ng-invalid {
+    &.ng-not-empty {
+      border-color:red;
+    }
+  } 
+}
+label {
+  .required & {
+    &:after {
+      content:" *";
+      color:red;
+    }
+  }
+}
+ul.nav.navbar-nav.navbar-right {
+  position:static;
+}
+div.ui-grid-render-container {
+  > div.ui-grid-viewport {
+//    overflow:hidden !important;
+    > div.ui-grid-canvas {
+//      width:100%;
+    }
+  }
+}
+div.bootstrap-datetimepicker-widget {
+  position:absolute;
+  display:block;
+}
+div.ui-grid-top-panel {
+  overflow:visible;
+  @include background-image(linear-gradient(#7B1FA2, #6A1B9A));
+  color:white;
+  div.ui-grid-header-viewport {   
+    overflow:visible;
+    .ui-grid-filter-container .bootstrap-datetimepicker-widget {
+      position:absolute;
+    }
+    input {
+      color:black;
+    }   
+  }
+}
+div.navbar-inverse {
+  background-color:$color-800;
+}
+.navbar-default .navbar-nav > .active > a {
+    -webkit-box-shadow: 0 1px 0 0 #6A1B9A;
+    box-shadow: 0 1px 0 0 #6A1B9A;  
+}
+
+#ClubAdminDailyReportTable .ui-grid-header {
+  font-size: 10px;
+}
+
+@mixin HeaderCell() {
+  height: 100%;            
+  > div {
+    height:100%;
+    @include vcentered();
+    div.ui-grid-cell-contents {
+      height:auto;
+    }
+  }  
+}
+@mixin filterHederCell($n) {
+  > div {           
+    > div {
+      &:nth-of-type(2) {
+        margin-left:0px;
+        margin-right:0px;               
+        div.ui-grid-filter-container {
+          @include make-xs-column($n);
+          padding-left: 5px;
+          padding-right: 5px;          
+        }
+      }
+    }
+  }  
+}
+
+div.table_container {
+  height:inherit !important;
+  border-left-width:0;
+  border-right-width:0;  
+  div.ui-grid-header {
+    div.ui-grid-top-panel {
+      background-image:none;
+      background-color:white;
+      color:black;
+      div.ui-grid-header-viewport {
+        div.ui-grid-header-cell-wrapper {
+          > div.ui-grid-header-cell-row {
+            > div {      
+              border-left: 0px solid #ddd;
+              border-bottom: 1px solid #bbb;
+              padding: 5px 10px;
+              line-height: 1.5384616;
+              font-size:13px;                                                        
+            }
+          }
+        }
+      }      
+    }
+  }
+  div.ui-grid-viewport {
+    div.ui-grid-canvas {
+      div.ui-grid-row {     
+        > div {
+          @extend .clearfix;
+          background-color:white;
+          color:#333;
+          line-height: 1.5384616;
+          &.bg-success {
+            background-color:#e0f7fa;
+            &:hover {
+              > div {
+                @include background-image(linear-gradient(to bottom, #ffffff 96%, #00a0e8 96%));
+              }
+            }       
+          }
+          &.bg-danger {
+            background-color:#fbe9e7;
+            &:hover {
+              > div {
+                @include background-image(linear-gradient(to bottom, #ffffff 96%, #ff1807 96%));
+              }
+            }           
+          }
+          &.bg-warning {
+            background-color:#fff3e0;
+            &:hover {
+              > div {
+                @include background-image(linear-gradient(to bottom, #ffffff 96%, #ffa407 96%));
+              }
+            }          
+          }
+          > div {
+            border-top: 1px solid #ddd;
+            font-size:13px;
+//            display:table;
+            > div {
+//              vertical-align: middle;
+//              display: table-cell;
+//              height:100%;
+//              padding-top:13px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                height:auto;
+              a {
+                @include transform(scale(0.8));
+                @include transition(all 0.05s ease-in);
+                &:hover {
+                  @include transform(scale(0.9));
+                  @include transition(all 0.1s ease-in);                  
+                }
+              } 
+              button.btn-rounded {
+                @include transform(scale(0.8));
+                @include transition(all 0.05s ease-in);
+                &:hover {
+                  @include transform(scale(0.9));
+                  @include transition(all 0.1s ease-in);                  
+                }
+              }           
+            }
+          }                  
+        }
+        &:last-child {
+          > div {
+            > div.ui-grid-cell {
+              border-bottom:1px solid #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#ClubadminClubTransactionsContent {
+  div.page-content {
+    @extend .panel;
+    div.content-wrapper {
+      div#ClubadminClubTransactionsTable {
+        height:100% !important;
+        div.table_container {
+          div.ui-grid-header-viewport {
+            div.ui-grid-header-cell-wrapper {
+              > div.ui-grid-header-cell-row {
+                > div {                 
+                  &:nth-of-type(1) {
+                    @include filterHederCell(12);           
+                  }
+                  &:nth-of-type(2) {
+                    @include HeaderCell();
+                  }
+                  &:nth-of-type(3) {
+                    @include HeaderCell();
+                  }   
+                   &:nth-of-type(4) {
+                    @include filterHederCell(12);           
+                  }
+                  &:nth-of-type(5) {
+                    @include HeaderCell();
+                  }          
+                  &:nth-of-type(6) {
+                    @include filterHederCell(12);           
+                  }
+                  &:nth-of-type(7) {
+                    @include filterHederCell(12);
+                  }          
+                  &:nth-of-type(8) {
+                    @include HeaderCell();
+                  }                                                           
+                  &:nth-of-type(9) {
+                    @include HeaderCell();
+                  }                                                           
+                }
+              }
+            }
+          }
+          div.ui-grid-viewport {
+            div.ui-grid-canvas {
+              div.ui-grid-row {
+                > div {
+                  > div {
+                    > div.time_container {
+                      height:100%;
+                    }
+                  }
+                }
+              }
+            }
+          }                               
+        }
+      }
+    }
+  }
+}
+#ClubadminPlayerTransactionsContent {
+  div.page-content {
+    @extend .panel;
+    div.content-wrapper {
+      div#ClubadminPlayersList {
+        height:100% !important;
+        border-width:0;
+        div.table_container {
+          div.ui-grid-header-viewport {
+            div.ui-grid-header-cell-wrapper {
+              > div.ui-grid-header-cell-row {
+                > div {                 
+                  &:nth-of-type(1) {
+                    @include filterHederCell(12);           
+                  }
+                  &:nth-of-type(2) {
+                    @include HeaderCell();
+                  }
+                  &:nth-of-type(3) {
+                    @include HeaderCell();
+                  }   
+                  &:nth-of-type(4) {
+                    @include filterHederCell(12);
+                  }
+                  &:nth-of-type(5) {
+                    @include filterHederCell(12);           
+                  }
+                  &:nth-of-type(6) {
+                    @include filterHederCell(12);
+                  }          
+                  &:nth-of-type(7) {
+                    @include HeaderCell();      
+
+                  }                                                         
+                }
+              }
+            }
+          }
+          div.ui-grid-viewport {
+            div.ui-grid-canvas {
+              div.ui-grid-row {
+                > div {
+                  > div {
+                    > div.time_container {
+                      height:100%;
+                    }
+                  }
+                }
+              }
+            }
+          }                               
+        }
+      }      
+    }
+  }
+}
+#ClubAdminDailyReport {
+  div.page-content {
+    @extend .panel;
+    div.content-wrapper {
+      div.datatable-header {
+        padding:20px;
+        border-top:1px solid #dddddd;
+        border-bottom-width:0;
+		
+      }
+      div#ClubAdminDailyReportTable {
+        @include calc('height', '100% - 73px');
+        div.table_container {
+          height:100% !important;
+          div.ui-grid-canvas {
+            width:100% !important;
+            > div {
+              width:100%;
+              > div {
+                  @include background-image(linear-gradient(to bottom, #CCC, white 2.5%));              
+              }
+              &:nth-child(even) {
+                > div {
+                  background-color:#f3f3f3;
+                  @include background-image(linear-gradient(to bottom, #CCC, #f3f3f3 2.5%));
+                }
+              }
+            }
+          }
+        } 
+      }
+    }      
+  }    
+}
+div.tablereport-header2 {
+  padding:20px;
+  border-top:1px solid #dddddd;
+  border-bottom-width:0;
+}  
+
+.backofficerolediv {
+  .table_layout & {
+    position: absolute;
+    height: calc(100% - 52px);
+    padding-bottom: 22px;
+    width:100%;
+    > div.page-container {
+      height:100%;
+      @include calc('height', '100% - 50px');
+      padding-bottom:22px;
+      width:100%;
+      position: absolute;
+      > div.page-content {
+        @include calc('height', '100% - 61px');
+        @include calc('width', '100% - 40px');
+        position: absolute;
+        > div.content-wrapper {
+          height:100%;
+          position: absolute;
+          width:100%;
+          @include calc('height', '100% - 68px');
+          > div.table {
+            height:100%;
+          }
+        }
+        > div.content-wrapper2 {
+          @include calc('height', '100% - 145px');
+        }
+      }
+      &.full {
+        top: -50px;
+        padding: 5px;
+        @include calc('height', '100% + 50px');
+        background-color:rgba(255, 255, 255, 0.72);
+        z-index:10;
+        div.page-content {
+          @include calc('width', '100% - 10px');
+          @include calc('height', '100% - 10px');
+          margin-bottom:0;
+        }
+      }      
+    }  
+  }
+}
+
+.table_layout {
+  div.page-content {
+    @extend .panel;
+  }  
+}
+div.ui-grid-filter-container > div {
+  @extend .form-group;
+  @extend .form-group-xs;
+  margin-bottom:5px;
+}
+.ui-grid-header-canvas input.ui-grid-filter-input {
+  @extend .form-control;
+  @extend .input-xs;  
+}
+
+.ui-grid-header-canvas select {
+  @extend .form-control;
+  @extend .input-xs;  
+}
+
+.page-title {
+  .table_layout & {
+    display:none;
+  }
+}
+.page-header-content {
+  .table_layout & {
+    display:none;
+  }
+}
+.icons-list {
+  a[data-action="fullscreen"] {
+    &:after {
+      content:"\e9f9";
+    }
+    .full & {
+      display:none;
+    }
+  }
+  a[data-action="exitfullscreen"] {
+    display:none;
+    &:after {
+      content:"\e9fa";
+    }
+    .full & {
+      display:block;
+    }
+  }  
+}
+.table_layout {
+  .page-header + .page-container {
+    padding-top:20px;
+  }
+}
+.btn-default {
+	@extend .text-violet-800;
+	@extend .border-violet;
+	@extend .btn-flat;
+}
+.btn-primary {
+	background-color:$color-700;
+	border-color:$color-800;
+	border-width:2px;
+	@extend .btn-flat;
+	&:hover {
+		background-color:$color;
+		border-color:$color-600;
+	}
+	&:focus {
+		background-color:$color-400;
+		border-color:$color;
+	}
+	&:active {
+		background-color:$color-400;
+		border-color:$color;
+	}
+	&.active {
+		background-color:$color-400;
+		border-color:$color;
+	}	
+	&:target {
+		background-color:$color-400;
+		border-color:$color;
+	}				
+}
+.input-group {
+	span.input-group-addon {
+		border-color:$color;
+		background-color:$color-400;
+		color:white;
+	}
+}
+.dropdown-menu {
+	> .active {
+		a {
+			background-color:$color-800;
+			color:white;
+			&:hover {
+				background-color:$color-700;
+			}
+			&:focus {
+				background-color:$color-600;
+			}
+		}
+	}
+}
+.panel-ico-fix {
+	.media-left {
+		padding-right:10px;
+		.btn-xs {
+			padding:7px 8px;
+		}
+	}
+}
+.fiveCols {
+	width:20%;
+}
+.fivecols {
+	> div {
+    width: 20%;
+	}
+}
+.icon-sum {
+    font-family: sans-serif;
+    font-weight: bolder;	
+}
+.icon-num {
+    font-family: initial;
+    font-weight: normal;
+    .transactions-panel & {
+	    font-size: 12px;
+	    top: 0px;
+	    left: -3px; 	      	
+    }	
+}
+div.container-fluid {
+	.panelClub & {
+	    border-top: 1px solid #dddddd;
+	    border-bottom-width: 0;	
+	    padding:20px;
+	    padding-bottom:0;	
+	}
+}
+.panelClub {
+	h5 {
+		i {
+			font-size:11px;
+		}
+	}
+  div.media.content-group {
+    ul.list-inline-condensed {
+      li {
+        vertical-align:top;
+        &:last-child {
+          @include calc('max-width', '100% - 18px');
+        }
+      }
+    }
+  }
+}
+span.clubActiveLabel {
+  @extend .bg-success;
+  .blocked & {
+    @extend .bg-danger;
+  }
+}
+.modalTable {
+  padding:5px !important;
+  @include calc('height','100% - 0px');
+  @include calc('width','100% - 10px');
+  overflow-y:hidden !important;
+  div.modal-dialog {
+    height:100%;
+    div.modal-content {
+      height:100%;
+      div.modal-header {
+        border-bottom-width:0;
+        button.close {
+          font-size:17px;
+        }
+      }
+      div.modal-body {
+        @include calc('height', '100% - 90px');
+        div.table {
+          height:100% !important;
+          div.ui-grid-viewport {
+            overflow-x:hidden;
+          }
+        }
+      }
+      div.modal-footer {
+        border-top-width:0;
+      }
+    }
+  }
+}
+div.modal-header {
+  border-bottom-width:0;
+}
+.modal-footer {
+  border-top-width:0;
+}
+.heading-btn {
+	> i , > span {
+		color: #FFF;
+	}
+}
+li.dropdown-user {
+  > a {
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;    
+  }
+}
+a.btn-icon {
+  .table & {
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    line-height: 34px;  
+  }
+}
+button.btn-icon {
+  .table & {
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    line-height: 34px;  
+  }
+}
+div.bootstrap-datetimepicker-widget.dropdown-menu {
+  min-width:310px;
+} 
+.datepicker > div {
+  display: block;
+}
+.datepicker table tr td.active, 
+.datepicker table tr td.active:hover, 
+.datepicker table tr td.active.disabled, 
+.datepicker table tr td.active.disabled:hover {
+  @include background-image(linear-gradient($color-600, $color-800));
+}
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+  @include background-image(linear-gradient($color-300, $color-400));
+}
+.datepicker table tr td span.active, 
+.datepicker table tr td span.active:hover, 
+.datepicker table tr td span.active.disabled, 
+.datepicker table tr td span.active.disabled:hover {
+  @include background-image(linear-gradient($color-600, $color-800));
+}
+div.timepicker-picker {
+  table.table-condensed {
+    width:100%;
+    tr {
+      td {
+        text-align:center;
+      }
+    }
+  }
+}
+
+div.datepicker-months {
+  table.table-condensed {
+    width:100%;
+    tr {
+      td {
+        text-align:center;
+        span {
+          @include centered();
+        }
+      }
+    }
+  }
+}
+.timepicker-hours {
+  table.table-condensed {
+    width:100%;
+    tr {
+      td {
+        text-align:center;
+        cursor:pointer;
+      }
+    }    
+  }
+}
+a {
+  color:$color;
+  &:hover {
+    color:$color-400;
+  }
+}
+.ui-grid-header-viewport {
+  @include background-image(linear-gradient($color-700, $color-800));
+}
+.ui-grid-header-cell {
+  @include background-image(linear-gradient($color-700, $color-800));
+  color:white;
+  border-color:$color-500 !important;
+  font-weight:normal;
+}
+.ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+  border-color:$color-500 !important;
+}
+div.slNavbar {
+  float:right;
+  width:auto;
+  margin-top:-50px;
+  ul.nav.navbar-nav {
+    li {
+      a {
+        background-color:$color;
+        color:white;
+        &:hover {
+          background-color:$color-600;
+        }
+      }
+      &.active {
+        a {
+          background-color:$color-800;
+          @include box-shadow(0 1px 0 0 #c18471);
+          &:hover {
+            background-color:$color-800 !important;
+            color:white !important;
+          }
+          &:focus {
+            background-color:$color-800 !important;
+            color:white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color:white;
+}
+
+.panel-heading2 {
+  @extend .panel-heading;
+  padding: 0;
+}
+
+.FindPlayerPanel {
+	li {
+    margin-right: 30px;
+    h6 {
+      i {
+        color: $color-600;
+      }
+    }
+
+    &:last-child {
+      margin-right:0;
+    }
+	}
+}
+
+
+.modal.fullscreen {
+  position:fixed;
+  margin : 0;
+  width : 100%;
+  padding : 0;
+}
+
+.modal.fullscreen .modal-dialog {
+  width : 100%;
+  margin:0;
+}
+
+.modal.fullscreen button.close {
+  font-size : 35px;
+
+}
+
+.table_container {
+  height: auto !important;
+}
+
+.bootbox-body {
+  padding-top: 30px;
+}
+
+.modal.fullscreen .modal-header {
+  padding-bottom: 20px;
+}
+
+.icons-list {
+	> li {
+		display: inline-grid;
+	}
+}
+
+.tab-content > .active {
+  display: block !important;
+}

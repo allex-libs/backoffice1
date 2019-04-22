@@ -1,0 +1,1 @@
+ALLEX.execSuite.libRegistry.register('allex_backoffice1lib',require('./libindex')(ALLEX, ALLEX.execSuite.libRegistry.get('allex_applib'), ALLEX.execSuite.libRegistry.get('allex_jqueryelementslib'), ALLEX.execSuite.libRegistry.get('allex_templateslitelib'), ALLEX.execSuite.libRegistry.get('allex_htmltemplateslib'), ALLEX.execSuite.libRegistry.get('allex_bootstraptemplateslib')));
