@@ -9171,8 +9171,8 @@ button.close {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("../../../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.eot?3p0rtw");
-  src: url("../../../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.eot?#iefix3p0rtw") format("embedded-opentype"), url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.woff?3p0rtw") format("woff"), url("../../../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.ttf?3p0rtw") format("truetype"), url("../../../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.svg?3p0rtw#icomoon") format("svg");
+  src: url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.eot?3p0rtw");
+  src: url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.eot?#iefix3p0rtw") format("embedded-opentype"), url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.woff?3p0rtw") format("woff"), url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.ttf?3p0rtw") format("truetype"), url("../frameworks/limitless/assets/css/icons/icomoon/fonts/icomoon.svg?3p0rtw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -14951,8 +14951,8 @@ button.close {
  * ---------------------------------------------------------------------------- */
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.eot");
-  src: url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.woff2") format("woff2"), url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.woff") format("woff"), url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.ttf") format("truetype"), url("../dist/frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+  src: url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.eot");
+  src: url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.woff2") format("woff2"), url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.woff") format("woff"), url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.ttf") format("truetype"), url("../frameworks/limitless/assets/css/icons//glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
 /* line 17, ../../css/frameworks/limitless/assets/css/core.scss */
 .glyphicon {
