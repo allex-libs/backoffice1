@@ -9,7 +9,7 @@ function createPipelineWithValidateCredentials (execlib, applib) {
         success : '!submit',
         error : ':actual',
         onStart : onCheckPasswordStart,
-        onSuccess : standardPipelineFormSuccess
+        onSuccess : 'standard'
       },
       {
         element : '.>validateCredentials',
@@ -21,12 +21,18 @@ function createPipelineWithValidateCredentials (execlib, applib) {
     element.set('data', {});
   }
 
-  function standardPipelineFormSuccess (element, data, all_data) {
-    element.set('actual', false);
-  }
-
   function pipelineWithValidateCredentials (before, after) {
-    var ret = lib.isArray(before) ? before.concat(validateCredentialsPipeline) : validateCredentialsPipeline;
+    var bisa, ret, lastbefore;
+    bisa = lib.isArray(before);
+    if (bisa && before.length>0) {
+      lastbefore = before[before.length-1];
+      if (!lastbefore.onSuccess) {
+        lastbefore.onSuccess='standard';
+      } else if (lastbefore.onSuccess!=='standard') {
+        console.warn('PipelineWithValidateCredentials: The last element before the validateCredentials step had onSuccess', lastbefore.onSuccess);
+      }
+    }
+    ret = bisa ? before.concat(validateCredentialsPipeline) : validateCredentialsPipeline;
     return lib.isArray(after) ? ret.concat(after) : ret;
   }
 

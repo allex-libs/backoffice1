@@ -4,7 +4,7 @@ function createCheckPasswordMarkup (templatelib, pagemarkups) {
   var o = templatelib.override, m = pagemarkups;
   
   return o(m.div,
-    'CLASS', 'modal fade',
+    'CLASS', 'modal fade top-front-modal',
     'ATTRS', 'data-size="sm"',
     'CONTENTS', o(m.div,
       'CLASS', 'modal-dialog',

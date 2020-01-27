@@ -68,7 +68,7 @@ function createInitPrePreprocessor (execlib, applib, jquerylib, markups) {
     };
     desc.preprocessors['AngularNotification.FromFunction'] = [{
       notification: 'notification',
-      functions: []
+      functions: ['validateCredentials']
     }];
     desc.preprocessors.i18PreProcessor = {
       element_name : 'i18LanguageSelector',

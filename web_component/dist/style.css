@@ -54990,3 +54990,8 @@ div.slNavbar ul.nav.navbar-nav li.active a:focus {
 .tab-content > .active {
   display: block !important;
 }
+
+/* line 1156, ../../css/compass/style.scss */
+.top-front-modal {
+  z-index: 1060;
+}
